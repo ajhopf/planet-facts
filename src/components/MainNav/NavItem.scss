@@ -1,0 +1,45 @@
+// Define a list of planets and their colors
+$planets: (
+        mercury: #DEF4FC,
+        venus: #F7CC7F,
+        earth: #545BFE,
+        mars: #FF6A45,
+        jupiter: #ECAD7A,
+        saturn: #FCCB6B,
+        uranus: #65F0D5,
+        neptune: #497EFA
+);
+
+// Loop through the planets to update the variable and generate planet styles
+@each $planet, $color in $planets {
+  .dot.#{$planet} {
+    background-color: $color;
+  }
+
+  .nav-link.#{$planet} {
+    &:hover {
+      color: $color; // Match the hover color with the planet's background color
+    }
+  }
+
+  .nav-link.#{$planet}.active {
+    color: $color;
+  }
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+
+  .navbar-toggler-icon {
+    color: red;
+  }
+}
+
+
