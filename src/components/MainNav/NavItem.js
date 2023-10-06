@@ -1,13 +1,15 @@
 import Nav from "react-bootstrap/Nav";
 
-import icon from '../assets/icon-chevron.svg';
+import icon from '../../assets/icon-chevron.svg';
 import './NavItem.scss'
 import {NavLink} from "react-router-dom";
 
 const NavItem = (props) => {
   const classes = "nav-link " + props.planetName.toLowerCase();
+  const handleClick = props.onClick;
 
   return <NavLink
+    onClick={handleClick}
     to={ props.planetName.toLowerCase() }
     className={({isActive}) => isActive ? classes + ' active' : classes}>
     <div className="row">

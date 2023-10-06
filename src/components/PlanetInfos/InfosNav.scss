@@ -1,0 +1,34 @@
+$planets: (
+        mercury: #DEF4FC,
+        venus: #F7CC7F,
+        earth: #545BFE,
+        mars: #FF6A45,
+        jupiter: #ECAD7A,
+        saturn: #FCCB6B,
+        uranus: #65F0D5,
+        neptune: #497EFA
+);
+
+// Loop through the planets to update the variable and generate planet styles
+@each $planet, $color in $planets {
+  li.active.#{$planet} {
+    border-bottom: $color 2px solid;
+  }
+}
+
+li {
+  padding-bottom: 1rem;
+}
+
+.btn {
+  color: #FFF;
+}
+
+.btn.info-nav:active {
+  border-style: outset;
+  border-color: transparent;
+}
+
+.nav-hr {
+  margin-top: 0;
+}
